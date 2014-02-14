@@ -19,9 +19,9 @@ Ying Wang, Gaurang Mehta, Rajiv Mayani, Tade Souaiaia, Yangho Chen, Andrew Clark
 
 ### Version Release Notes
 
-    Version 2.1 - 2013 December 04
-        Expression Estimation now only uses unique alignments rather than "best" alignment.
-        Replaced deprecated function in DE branch.
+Version 2.1 - 2013 December 04
+    -Expression Estimation now only uses unique alignments rather than "best" alignment.
+    -Replaced deprecated function in DE branch.
 
 
 ### Development Team
