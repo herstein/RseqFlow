@@ -2,17 +2,17 @@
 
 Welcome to RseqFlow! 
 
-RseqFlow is an RNA-Seq analysis pipeline which offers an express implementation of analysis steps for RNA sequencing datasets. It can perform pre and post mapping quality control (QC) for sequencing data, calculate expression levels for uniquely mapped reads, identify differentially expressed genes, and convert file formats for ease of visualization. For a detailed description of the pipeline please see our [wiki](https://github.com/herstein/RseqFlow/wiki/Home). 
+RseqFlow is an RNA-Seq analysis pipeline which offers an express implementation of analysis steps for RNA sequencing datasets. It can perform pre and post mapping quality control (QC) for sequencing data, calculate expression levels for uniquely mapped reads, identify differentially expressed genes, and convert file formats for ease of visualization. For a detailed description of the pipeline please see our wiki (https://github.com/herstein/RseqFlow/wiki/Home). 
 
 
 ### Usage
 
-RseqFlow offers two run mode options. One is a VM workflow managed with Pegasus (see [here](http://genomics.isi.edu/rnaseq) for more details), the other, which is featured here, is a simple unix shell run mode that allows users to execute each branch of analysis with a unix command. For details on how to run RseqFlow see the [Manual](https://github.com/herstein/RseqFlow/wiki/Manual).
+RseqFlow offers two run mode options. One is a VM workflow managed with Pegasus, see http://genomics.isi.edu/rnaseq for more details.  The other, which is featured here, is a simple unix shell run mode that allows users to execute each branch of analysis with a unix command. For details on how to run RseqFlow see the Manual (https://github.com/herstein/RseqFlow/wiki/Manual).
 
 
 ### Citation
 
-Please cite our [publication](http://bioinformatics.oxfordjournals.org/content/27/18/2598) in the Bioinformatics journal:
+Please cite our publication (http://bioinformatics.oxfordjournals.org/content/27/18/2598) in the Bioinformatics journal:
 
 Ying Wang, Gaurang Mehta, Rajiv Mayani, Tade Souaiaia, Yangho Chen, Andrew Clark, Lin Wan, Oleg V. Evgrafov, James A. Knowles, Ewa Deelman and Ting Chen, RseqFlow: workflows for RNA-Seq data analysis. Bioinformatics, 2011, 27 (18): 2598–2600.
 
