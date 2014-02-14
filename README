@@ -1,0 +1,57 @@
+RseqFlow is an RNA-Seq analysis pipeline which offers an express implementation of analysis steps 
+for sequencing datasets. It can perform pre and post mapping quality control (QC) for sequencing 
+data, calculate expression levels for uniquely mapped reads, identify differentially expressed 
+genes, and convert file formats for ease of visualization. For more details see: 
+
+https://github.com/herstein/RseqFlow/wiki/RseqFlow-Pipeline-Description
+
+
+This is the Unix version. For details and examples, please see the Unix Mode Manual at:
+
+https://github.com/herstein/RseqFlow/wiki/Unix-Mode-Manual
+
+
+There is also a Pegasus Workflow Version please see:
+
+http://genomics.isi.edu/rnaseq/documents 
+
+
+-----------------
+Installation
+-----------------
+Please make sure the following packages are pre-installed:
+
+	- Python 2.7 or higher 
+	- R 2.11 or higher
+	- GCC 
+
+
+1) Download the source code to your directory, e.g '/home/user'. 
+
+2) Enter the rseqflow2 directory:
+
+      bash-3.2$ cd /home/user/rseqflow2
+
+3) Set up some tools:
+
+      bash-3.2$ ./make.sh 
+
+4) Set up PATH so that the system knows where to find the exectuable files. It is recommended to run step 5 after this to make these changes permanent, otherwise you will need to run ./configure.sh each time you run RseqFlow from a new terminal window.
+
+      bash-3.2$ source ./configure.sh 
+
+5) This step will make the changes to your PATH and PYTHONPATH variables from step 4 permanent. If you choose not to do this step, you will need to run configure.sh each time you run RseqFlow. To make the PATH and PYTHONPATH changes permanent, copy the commands in 'configure.sh' into your bash file either manually or with the following command. 
+
+IMPORTANT: Please make sure the command contains ">>", not “>", otherwise, you will overwrite your original bash file!
+
+      bash-3.2$ cat configure.sh >> /home/user/.bashrc
+
+6) If your system has multiple python versions, make sure you use version 2.7 or higher. Run 'pythonCompilerSet.sh' to set the proper python header in each of the python scripts. This example assumes the path of the python executable is '/home/user/python2.7'.
+
+      bash-3.2$ ./pythonCompilerSet.sh -p /home/user/python2.7/python
+
+7) Now you can run the corresponding shell scripts for each branch. 
+
+For examples, please see the Unix Mode Manual at:
+
+https://github.com/herstein/RseqFlow/wiki/Unix-Mode-Manual
