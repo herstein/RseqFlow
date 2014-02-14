@@ -1,57 +1,34 @@
-RseqFlow is an RNA-Seq analysis pipeline which offers an express implementation of analysis steps 
-for sequencing datasets. It can perform pre and post mapping quality control (QC) for sequencing 
-data, calculate expression levels for uniquely mapped reads, identify differentially expressed 
-genes, and convert file formats for ease of visualization. For more details see: 
+### RseqFlow
 
-https://github.com/herstein/RseqFlow/wiki/RseqFlow-Pipeline-Description
+Welcome to RseqFlow! 
 
-
-This is the Unix version. For details and examples, please see the Unix Mode Manual at:
-
-https://github.com/herstein/RseqFlow/wiki/Unix-Mode-Manual
+RseqFlow is an RNA-Seq analysis pipeline which offers an express implementation of analysis steps for RNA sequencing datasets. It can perform pre and post mapping quality control (QC) for sequencing data, calculate expression levels for uniquely mapped reads, identify differentially expressed genes, and convert file formats for ease of visualization. For a detailed description of the pipeline please see our [wiki](https://github.com/herstein/RseqFlow/wiki/Home). 
 
 
-There is also a Pegasus Workflow Version please see:
+### Usage
 
-http://genomics.isi.edu/rnaseq/documents 
-
-
------------------
-Installation
------------------
-Please make sure the following packages are pre-installed:
-
-	- Python 2.7 or higher 
-	- R 2.11 or higher
-	- GCC 
+RseqFlow offers two run mode options. One is a VM workflow managed with Pegasus (see [here](http://genomics.isi.edu/rnaseq) for more details), the other, which is featured here, is a simple unix shell run mode that allows users to execute each branch of analysis with a unix command. For details on how to run RseqFlow see the [Manual](https://github.com/herstein/RseqFlow/wiki/Manual).
 
 
-1) Download the source code to your directory, e.g '/home/user'. 
+### Citation
 
-2) Enter the rseqflow2 directory:
+Please cite our [publication](http://bioinformatics.oxfordjournals.org/content/27/18/2598) in the Bioinformatics journal:
 
-      bash-3.2$ cd /home/user/rseqflow2
+Ying Wang, Gaurang Mehta, Rajiv Mayani, Tade Souaiaia, Yangho Chen, Andrew Clark, Lin Wan, Oleg V. Evgrafov, James A. Knowles, Ewa Deelman and Ting Chen, RseqFlow: workflows for RNA-Seq data analysis. Bioinformatics, 2011, 27 (18): 2598–2600.
 
-3) Set up some tools:
 
-      bash-3.2$ ./make.sh 
+### Version Release Notes
 
-4) Set up PATH so that the system knows where to find the exectuable files. It is recommended to run step 5 after this to make these changes permanent, otherwise you will need to run ./configure.sh each time you run RseqFlow from a new terminal window.
+    Version 2.1 - 2013 December 04
+        Expression Estimation now only uses unique alignments rather than "best" alignment.
+        Replaced deprecated function in DE branch.
 
-      bash-3.2$ source ./configure.sh 
 
-5) This step will make the changes to your PATH and PYTHONPATH variables from step 4 permanent. If you choose not to do this step, you will need to run configure.sh each time you run RseqFlow. To make the PATH and PYTHONPATH changes permanent, copy the commands in 'configure.sh' into your bash file either manually or with the following command. 
+### Development Team
+#
+The source code and Unix run mode of RseqFlow was developed by Ting Chen's group, Computational Molecular Biology, University of Southern California and Ying Wang's group, Automation Department, Xiamen University. The source code is maintained by James Knowles' group at Keck School of Medicine, University of Southern California. The VM workflow run mode was constructed by Ewa Deelman's group at Information Sciences Institute, University of Southern California. 
 
-IMPORTANT: Please make sure the command contains ">>", not “>", otherwise, you will overwrite your original bash file!
+    
+### Questions and Comments
 
-      bash-3.2$ cat configure.sh >> /home/user/.bashrc
-
-6) If your system has multiple python versions, make sure you use version 2.7 or higher. Run 'pythonCompilerSet.sh' to set the proper python header in each of the python scripts. This example assumes the path of the python executable is '/home/user/python2.7'.
-
-      bash-3.2$ ./pythonCompilerSet.sh -p /home/user/python2.7/python
-
-7) Now you can run the corresponding shell scripts for each branch. 
-
-For examples, please see the Unix Mode Manual at:
-
-https://github.com/herstein/RseqFlow/wiki/Unix-Mode-Manual
+All questions, comments, and suggestions are welcome at DL-RSEQFLOW-QUESTIONS@med.usc.edu

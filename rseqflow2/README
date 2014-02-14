@@ -3,17 +3,17 @@ for sequencing datasets. It can perform pre and post mapping quality control (QC
 data, calculate expression levels for uniquely mapped reads, identify differentially expressed 
 genes, and convert file formats for ease of visualization. For more details see: 
 
-https://github.com/herstein/RseqFlow/wiki/RseqFlow-Pipeline-Description
+https://github.com/herstein/RseqFlow/wiki/Description
 
 
 This is the Unix version. For details and examples, please see the Unix Mode Manual at:
 
-https://github.com/herstein/RseqFlow/wiki/Unix-Mode-Manual
+https://github.com/herstein/RseqFlow/wiki/Manual
 
 
 There is also a Pegasus Workflow Version please see:
 
-http://genomics.isi.edu/rnaseq/documents 
+http://genomics.isi.edu/rnaseq
 
 
 -----------------
@@ -26,7 +26,7 @@ Please make sure the following packages are pre-installed:
 	- GCC 
 
 
-1) Download the source code to your directory, e.g '/home/user'. 
+1) Download the source code to your directory, e.g '/home/user', and untar/unzip if necessary. 
 
 2) Enter the rseqflow2 directory:
 
@@ -54,4 +54,4 @@ IMPORTANT: Please make sure the command contains ">>", not “>", otherwise, you
 
 For examples, please see the Unix Mode Manual at:
 
-https://github.com/herstein/RseqFlow/wiki/Unix-Mode-Manual
+https://github.com/herstein/RseqFlow/wiki/Manual
