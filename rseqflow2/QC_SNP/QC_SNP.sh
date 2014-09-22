@@ -617,6 +617,10 @@ if $is_QC; then
                 echo "Errors when running mapping_stat.py, stopping the pipeline!"
                 exit 1
         fi
+        echo "converting $OUTPUT.mapping_report.txt to pdf file"
+        echo "text2pdf $OUTPUT.mapping_report.txt > $OUTPUT.mapping_report.pdf"
+        text2pdf $OUTPUT.mapping_report.txt > $OUTPUT.mapping_report.pdf
+    
 	#-----------------strand specificity----------------#
 	echo "Calculate reads strand specificity"
 	# Output: "$OUTPUT".strand_stat.txt
@@ -627,6 +631,11 @@ if $is_QC; then
                 echo "Errors when running strand_specificity.py, stopping the pipeline!"
                 exit 1
         fi
+        echo "converting $OUTPUT.strand_stat.txt to pdf file"
+        echo "text2pdf $OUTPUT.strand_stat.txt > $OUTPUT.strand_stat.pdf"
+        text2pdf $OUTPUT.strand_stat.txt > $OUTPUT.strand_stat.pdf
+
+
 	#---------------Gene Coverage Analysis--------------#
 	echo "Get genes with single transcript for gene body coverage analysis"
 	# Output: "$OUTPUT"_singleGene.gtf
@@ -715,6 +724,10 @@ if $is_QC; then
                 echo "Errors when running read_distribution.py, stopping the pipeline!"
                 exit 1
         fi
+        echo "converting $OUTPUT.read_distribution.txt to pdf file"
+        echo "text2pdf $OUTPUT.read_distribution.txt > $OUTPUT.read_distribution.pdf"
+        text2pdf $OUTPUT.read_distribution.txt > $OUTPUT.read_distribution.pdf
+
         if $is_cleanup; then
                 rm "$OUTPUT".utr_3.txt -f
                 rm "$OUTPUT".utr_5.txt -f
@@ -740,6 +753,10 @@ if $is_QC; then
                 echo "Errors when running simple_mapping_report.py(for ribosome), stopping the pipeline!"
                 exit 1
         fi
+        echo "converting $OUTPUT_rRNA.simple_mapping_report.txt to pdf file"
+        echo "text2pdf $OUTPUT_rRNA.simple_mapping_report.txt > $OUTPUT_rRNA.simple_mapping_report.pdf"
+        text2pdf $OUTPUT_rRNA.simple_mapping_report.txt > $OUTPUT_rRNA.simple_mapping_report.pdf
+
 	fi
 	if [[ -n $MITOCHONDRIAL ]]; then
 		# Output: "$OUTPUT"_chrM.simple_mapping_report.txt
@@ -750,7 +767,22 @@ if $is_QC; then
             echo "Errors when running simple_mapping_report.py(for mitochondrial), stopping the pipeline!"
             exit 1
         fi
+        echo "converting $OUTPUT_chrM.simple_mapping_report.txt to pdf file"            echo "text2pdf $OUTPUT_chrM.simple_mapping_report.txt > $OUTPUT_chrM.simple_mapping_report.pdf"
+        text2pdf $OUTPUT_chrM.simple_mapping_report.txt > $OUTPUT_chrM.simple_mapping_report.pdf
 	fi
+
+        # If "ImageMagick" installed, then combine all pdfs into a single pdf
+        echo "combining QC pdfs into a single pdf using Image Magick"
+        echo "identify -verison"
+        imageMagick=`identify -version`
+        if [[ $imageMagick =~ "Version: ImageMagick" ]]; then
+            echo "found ImageMagick, combining QC pdfs into a single pdf: ${OUTPUT}_combined_QC_report.pdf"
+            echo "convert *pdf ${OUTPUT}_combined_QC_report.pdf"
+            convert ${OUTPUT}*pdf ${OUTPUT}_combined_QC_report.pdf
+        else
+            echo "ImageMagick not found. If you wish to combine pdfs, please download and install ImageMagick."
+        fi
+         
 	if $is_cleanup; then
 		rm "$OUTPUT"_annotation_without_gene.gtf "$OUTPUT"_Table_convert.txt "$OUTPUT"_Bed_convert.bed -f
 		rm "$OUTPUT"_singleGene.gtf "$OUTPUT"_singleGene_Table_convert.txt "$OUTPUT"_singleGene_Bed_convert.bed -f

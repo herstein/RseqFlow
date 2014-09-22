@@ -24,6 +24,7 @@ Please make sure the following packages are pre-installed:
 	- Python 2.7 or higher 
 	- R 2.11 or higher
 	- GCC 
+    - ImageMagick (optional) Required if you want a comined QC PDF report
 
 
 1) Download the source code to your directory, e.g '/home/user', and untar/unzip if necessary. 

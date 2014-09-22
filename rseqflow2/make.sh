@@ -1,7 +1,7 @@
 #!/bin/bash
 
 CurrentPath=`pwd`
-VERSION="RseqFlow V2.1   2013 Dec 03"
+VERSION="RseqFlow V2.2   2014 Sep 22"
 
 echo "----setup QC_SNP module----"
 cd $CurrentPath/QC_SNP
@@ -50,15 +50,25 @@ cd $CurrentPath/QC_SNP/lib
 tar -xf bx.tar
 ERR=$?
 if [ $ERR -ne 0 ]; then
-        echo "Error: failed to decompress file bx.tar"
+        echo "Error: failed to decompress file QC_SNP/lib/bx.tar"
         exit 1
 fi
 tar -xf bx_extras.tar
 ERR=$?
 if [ $ERR -ne 0 ]; then
-        echo "Error: failed to decompress file bx_extras.tar"
+        echo "Error: failed to decompress file QC_SNP/lib/bx_extras.tar"
         exit 1
 fi
+
+cd $CurrentPath/QC_SNP/lib/text2pdf
+make
+ERR=$?
+if [ $ERR -ne 0 ]; then
+        echo "Error: failed to make QC_SNP/lib/text2pdf module"
+        exit 1
+fi
+
+
 
 echo "----setup ExpressionEstimation module----"
 cd $CurrentPath/ExpressionEstimation
@@ -144,6 +154,8 @@ touch $CurrentPath/configure.sh
 
 echo "PATH=\$PATH:$CurrentPath/QC_SNP" >$CurrentPath/configure.sh
 
+echo "PATH=\$PATH:$CurrentPath/QC_SNP/lib/text2pdf" >>$CurrentPath/configure.sh
+
 echo "PATH=\$PATH:$CurrentPath/ExpressionEstimation" >>$CurrentPath/configure.sh
 
 echo "PATH=\$PATH:$CurrentPath/DE" >>$CurrentPath/configure.sh
@@ -164,7 +176,7 @@ echo "PATH=\$PATH:$CurrentPath/OtherTools/BEDTools-Version-2.16.2/bin" >>$Curren
 
 echo "PATH=\$PATH:$CurrentPath/OtherTools/ucsc_tools" >>$CurrentPath/configure.sh
 
-echo "PYTHONPATH=$CurrentPath/QC_SNP/lib" >>$CurrentPath/configure.sh
+echo "PYTHONPATH=\$PYTHONPATH:$CurrentPath/QC_SNP/lib" >>$CurrentPath/configure.sh
 
 echo "RSEQFLOWPATH=$CurrentPath/DE" >>$CurrentPath/configure.sh
 
