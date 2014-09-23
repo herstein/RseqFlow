@@ -19,6 +19,9 @@ Ying Wang, Gaurang Mehta, Rajiv Mayani, Tade Souaiaia, Yangho Chen, Andrew Clark
 
 ### Version Release Notes
 
+Version 2.2 - 2014 September 22
+    -Create a combined QC pdf report if user has ImageMagick installed.
+    
 Version 2.1 - 2013 December 04
     -Expression Estimation now only uses unique alignments rather than "best" alignment.
     -Replaced deprecated function in DE branch.
