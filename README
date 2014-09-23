@@ -2,30 +2,30 @@
 
 Welcome to RseqFlow! 
 
-RseqFlow is an RNA-Seq analysis pipeline which offers an express implementation of analysis steps for RNA sequencing datasets. It can perform pre and post mapping quality control (QC) for sequencing data, calculate expression levels for uniquely mapped reads, identify differentially expressed genes, and convert file formats for ease of visualization. For a detailed description of the pipeline please see our [wiki](https://github.com/herstein/RseqFlow/wiki/Home). 
+RseqFlow is an RNA-Seq analysis pipeline which offers an express implementation of analysis steps for RNA sequencing datasets. It can perform pre and post mapping quality control (QC) for sequencing data, calculate expression levels for uniquely mapped reads, identify differentially expressed genes, and convert file formats for ease of visualization. For a detailed description of the pipeline please see our wiki (https://github.com/herstein/RseqFlow/wiki/Home). 
 
 
 ### Usage
 
-RseqFlow offers two run mode options. One is a VM workflow managed with Pegasus (see [here](http://genomics.isi.edu/rnaseq) for more details), the other, which is featured here, is a simple unix shell run mode that allows users to execute each branch of analysis with a unix command. For details on how to run RseqFlow see the [Manual](https://github.com/herstein/RseqFlow/wiki/Manual).
+RseqFlow offers two run mode options. One is a VM workflow managed with Pegasus, see http://genomics.isi.edu/rnaseq for more details.  The other, which is featured here, is a simple unix shell run mode that allows users to execute each branch of analysis with a unix command. For details on how to run RseqFlow see the Manual (https://github.com/herstein/RseqFlow/wiki/Manual).
 
 
 ### Citation
 
-Please cite our [publication](http://bioinformatics.oxfordjournals.org/content/27/18/2598) in the Bioinformatics journal:
+Please cite our publication (http://bioinformatics.oxfordjournals.org/content/27/18/2598) in the Bioinformatics journal:
 
 Ying Wang, Gaurang Mehta, Rajiv Mayani, Tade Souaiaia, Yangho Chen, Andrew Clark, Lin Wan, Oleg V. Evgrafov, James A. Knowles, Ewa Deelman and Ting Chen, RseqFlow: workflows for RNA-Seq data analysis. Bioinformatics, 2011, 27 (18): 2598–2600.
 
 
 ### Version Release Notes
 
-    Version 2.1 - 2013 December 04
-        Expression Estimation now only uses unique alignments rather than "best" alignment.
-        Replaced deprecated function in DE branch.
+Version 2.1 - 2013 December 04
+    -Expression Estimation now only uses unique alignments rather than "best" alignment.
+    -Replaced deprecated function in DE branch.
 
 
 ### Development Team
-#
+
 The source code and Unix run mode of RseqFlow was developed by Ting Chen's group, Computational Molecular Biology, University of Southern California and Ying Wang's group, Automation Department, Xiamen University. The source code is maintained by James Knowles' group at Keck School of Medicine, University of Southern California. The VM workflow run mode was constructed by Ewa Deelman's group at Information Sciences Institute, University of Southern California. 
 
     
